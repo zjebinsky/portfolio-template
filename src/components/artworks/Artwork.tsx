@@ -29,23 +29,27 @@ const Artwork = () => {
         imageRef.current,
         {
           opacity: 0,
-          x: 100,
+          x: 300,
           scale: 0.5,
         },
         {
           opacity: 1,
           x: 0,
           scale: 1,
-        }
+          duration: 1,
+          ease: "power2.out",
+        },
+        "key"
       ).fromTo(
         textRef.current,
-        {opacity: 0, x: -100, scale: 0.5},
+        {opacity: 0, scale: 0.5},
         {
           opacity: 1,
-          x: 0,
           scale: 1,
-          duration: 0.5,
-        }
+          duration: 1,
+          ease: "power2.out",
+        },
+        "key"
       );
     }, comp);
     return () => ctx.revert();
