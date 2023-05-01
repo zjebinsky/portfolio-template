@@ -2,6 +2,8 @@ AiArt - portfolio
 
 This is a template of a portfolio filled in with AI generated art. The used algorithm is Midjourney.
 
+Demo is available here -> aiart.maciejlezak.com
+
 ## Tech-stack
 
 React / GSAP / TAILWIND / TYPESCRIPT
