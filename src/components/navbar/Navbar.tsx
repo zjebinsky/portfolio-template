@@ -114,7 +114,7 @@ const NavModal = ({
   handleOpen,
 }: NavModalProps) => {
   return (
-    <div className="h-[90vh] top-[10vh] z-20 fixed bg-white">
+    <div className="h-[90vh] w-full top-[10vh] z-20 fixed bg-white">
       <div className="mx-4 pt-5 h-[90vh] flex flex-col">
         <h1 className="text-2xl">
           A simple yet visually pleasing portfolio
