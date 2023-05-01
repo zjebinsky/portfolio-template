@@ -17,12 +17,6 @@ interface Link {
   href: string;
 }
 
-interface Page {
-  id: number;
-  name: string;
-  link: string;
-}
-
 const links = [
   {
     id: 1,
