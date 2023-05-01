@@ -4,12 +4,24 @@ import {
   XMarkIcon,
   Bars3Icon,
 } from "@heroicons/react/24/solid";
+import {Link} from "react-router-dom";
 
 interface MenuProps {
   isMenuOpen: boolean;
   handleOpen: () => void;
 }
-import {Link} from "react-router-dom";
+
+interface Link {
+  id: number;
+  name: string;
+  href: string;
+}
+
+interface Page {
+  id: number;
+  name: string;
+  link: string;
+}
 
 const links = [
   {
@@ -47,7 +59,7 @@ const pages = [
   },
 ];
 
-const Navbar = () => {
+const Navbar = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] =
     useState(false);
 
@@ -100,7 +112,13 @@ const TopNav = ({
   );
 };
 
-const NavModal = ({handleOpen}: () => void) => {
+interface NavModalProps {
+  handleOpen: () => void;
+}
+
+const NavModal = ({
+  handleOpen,
+}: NavModalProps) => {
   return (
     <div className="h-[90vh] top-[10vh] z-20 fixed bg-white">
       <div className="mx-4 pt-5 h-[90vh] flex flex-col">
