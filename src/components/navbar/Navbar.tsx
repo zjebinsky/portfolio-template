@@ -5,6 +5,7 @@ import {
   Bars3Icon,
 } from "@heroicons/react/24/solid";
 import {Link} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 interface MenuProps {
   isMenuOpen: boolean;
@@ -15,6 +16,11 @@ interface Link {
   id: number;
   name: string;
   href: string;
+}
+
+interface RouteParams {
+  id: string;
+  [key: string]: string | undefined;
 }
 
 const links = [
@@ -57,9 +63,21 @@ const Navbar = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] =
     useState(false);
 
+  const [currentPage, setCurrentPage] =
+    useState<string>("Art");
+
   const handleOpen = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleCurrentPage = (
+    pageName: string
+  ) => {
+    setCurrentPage(pageName);
+  };
+
+  const id = useParams<RouteParams>();
+  console.log(id);
 
   return (
     <>
@@ -69,11 +87,18 @@ const Navbar = (): JSX.Element => {
           handleOpen={handleOpen}
         />
         {isMenuOpen && (
-          <NavModal handleOpen={handleOpen} />
+          <NavModal
+            handleOpen={handleOpen}
+            currentPage={currentPage}
+            handleCurrentPage={handleCurrentPage}
+          />
         )}
       </div>
       <div className="hidden md:block">
-        <SideNav />
+        <SideNav
+          currentPage={currentPage}
+          handleCurrentPage={handleCurrentPage}
+        />
       </div>
     </>
   );
@@ -108,10 +133,14 @@ const TopNav = ({
 
 interface NavModalProps {
   handleOpen: () => void;
+  currentPage: string;
+  handleCurrentPage: (pageName: string) => void;
 }
 
 const NavModal = ({
   handleOpen,
+  currentPage,
+  handleCurrentPage,
 }: NavModalProps) => {
   return (
     <div className="h-[90vh] w-full top-[10vh] z-20 fixed bg-white">
@@ -127,7 +156,14 @@ const NavModal = ({
             {pages.map((page) => (
               <li
                 key={page.id}
-                className="mt-7 cursor-pointer"
+                className={`mt-7 cursor-pointer ${
+                  currentPage === page.name
+                    ? "font-bold underline"
+                    : ""
+                }`}
+                onClick={() =>
+                  handleCurrentPage(page.name)
+                }
               >
                 <Link
                   to={page.link}
@@ -162,7 +198,15 @@ const NavModal = ({
   );
 };
 
-const SideNav = () => {
+interface SideNavProps {
+  currentPage: string;
+  handleCurrentPage: (pageName: string) => void;
+}
+
+const SideNav = ({
+  currentPage,
+  handleCurrentPage,
+}: SideNavProps) => {
   return (
     <>
       <div className="w-[300px]"></div>
@@ -202,7 +246,14 @@ const SideNav = () => {
                   className={`py-1 border-t-[1px] border-black border-dashed ${
                     page.id === 3 &&
                     `border-b-[1px]`
-                  } cursor-pointer`}
+                  } cursor-pointer ${
+                    currentPage === page.name
+                      ? "font-bold underline"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handleCurrentPage(page.name)
+                  }
                 >
                   <Link to={page.link}>
                     {page.name}
