@@ -49,7 +49,7 @@ export const artworks = [
     Image: img5,
     Name: "Guernica",
     Description:
-      "A painting of the bombing of the Spanish town of Guernica. horrors of war and the suffering of innocent civilians. The distorted figures and fragmented forms may be seen as a reflection of the chaos and destruction of the bombing, while the stark monochromatic palette may represent the starkness and brutality of the events depicted.",
+      "A painting of the bombing of the Spanish town of Guernica. H*orrors of war and the suffering of innocent civilians. The distorted figures and fragmented forms may be seen as a reflection of the chaos and destruction of the bombing, while the stark monochromatic palette may represent the starkness and brutality of the events depicted.",
     Style: "Surrealism",
   },
   {
