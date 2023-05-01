@@ -109,7 +109,7 @@ const TopNav = ({
   handleOpen,
 }: MenuProps) => {
   return (
-    <div className="flex h-[10vh] items-center justify-between border-y-[1px] border-black fixed w-full bg-white">
+    <div className="flex h-[10vh] items-center justify-between border-y-[1px] border-black fixed w-full z-30 bg-white">
       <div className="w-20 h-20 border-r-[1px] border-black flex justify-center items-center">
         <img
           src={logo}
