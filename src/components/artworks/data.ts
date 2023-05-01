@@ -17,7 +17,7 @@ export const artworks = [
     Image: img1,
     Name: "Sunflowers",
     Description:
-      "A painting of sunflowers in a vase. Representation of the artist's love for nature and his desire to capture its beauty on canvas. The sunflowers themselves may also be seen as a symbol of the cycle of life and death, as they bloom and wither over time.",
+      "A painting of sunflowers in a vase. Representation of the love for nature and desire to capture its beauty on canvas. The sunflowers themselves may also be seen as a symbol of the cycle of life and death, as they bloom and wither over time.",
     Style: "Impressionism",
   },
   {

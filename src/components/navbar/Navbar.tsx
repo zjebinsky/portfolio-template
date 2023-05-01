@@ -117,9 +117,9 @@ const NavModal = ({
     <div className="h-[90vh] top-[10vh] z-20 fixed bg-white">
       <div className="mx-4 pt-5 h-[90vh] flex flex-col">
         <h1 className="text-2xl">
-          A simple yet visually pleaseing
-          portfolio template filled with AI
-          generated paintings.
+          A simple yet visually pleasing portfolio
+          template filled with AI generated
+          paintings.
         </h1>
 
         <nav className="my-10 text-7xl font-Playfair">
@@ -179,7 +179,7 @@ const SideNav = () => {
             AiArt
           </div>
           <div className="text-md mt-2">
-            A simple yet visually pleaseing
+            A simple yet visually pleasing
             portfolio template filled with AI
             generated paintings.
           </div>
